@@ -1,0 +1,49 @@
+/* Add your CSS styles here */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: url('C:\Users\ALHUSSAIN\Desktop\TY VIT\AI Assignment\CP\web\templates\BG-video.mp4') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto; /* Centered container with margin */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 10px;
+}
+
+.input-form {
+    text-align: center;
+}
+
+.input-form textarea,
+.input-form select,
+.input-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    color: #fff;
+    resize: none;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.input-form input[type="submit"] {
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.poem {
+    font-style: italic;
+    line-height: 1.5;
+    margin-top: 20px;
+    text-align: center;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poem Generator</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?nature'); /* Background image from Unsplash CDN */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto; /* Centered container with margin */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 10px;
+        }
+
+        .input-form {
+            text-align: center;
+        }
+
+        .input-form textarea,
+        .input-form select,
+        .input-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            color: #fff;
+            resize: none;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+
+        .input-form select option {
+            color: black; /* Change text color of options to black */
+        }
+
+        .input-form input[type="submit"] {
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .poem {
+            font-style: italic;
+            line-height: 1.5;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Verse Craft: A MultLingual Poem Generator</h1>
+        <form class="input-form" method="post">
+            <label for="prompt">Enter the prompt for the poem:</label><br>
+            <textarea id="prompt" name="prompt" rows="4" cols="50" placeholder="Enter your prompt here..." required></textarea><br>
+            
+            <label for="language">Select the language:</label>
+            <select id="language" name="language" required>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="kn">Kannada</option>
+                <option value="mr">Marathi</option>
+                <option value="bn">Bengali</option>
+            </select><br>
+
+            <input type="submit" value="Generate Poem">
+        </form>
+
+        {% if poem %}
+        <h2>Poem:</h2>
+        <div class="poem">
+            {% for line in poem.split('\n') %}
+                {{ line }}
+                <br>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
